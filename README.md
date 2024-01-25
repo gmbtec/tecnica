@@ -1,6 +1,8 @@
-Diagrama de Classe
+# Melhoria na visualizacao das diagramas do projeto
+Disposição da classes
+## Diagrama de Classe
 
-```
+```mermaid
 classDiagram
   class User {
     -name: String
