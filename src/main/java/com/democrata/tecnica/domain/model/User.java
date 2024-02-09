@@ -19,6 +19,14 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
+
+    /*
+        FetchType.EAGER é mais apropriado quando você sabe que sempre precisará dos dados associados e
+         quando o custo do carregamento antecipado não é proibitivo.
+        FetchType.LAZY é preferível quando você deseja otimizar o desempenho,
+         carregando dados associados apenas quando necessário.
+
+    */
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Feature> features;
 

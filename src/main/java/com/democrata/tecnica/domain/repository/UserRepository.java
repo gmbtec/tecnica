@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    // verifica se dentro do usuario ja existe uma conta
     boolean existsByAccountNumber(String accountNumber);
 }
