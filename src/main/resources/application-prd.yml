@@ -1,9 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres # Correção do nome de usuário
+    password: 123456
   jpa:
-    open-in-view: true
+    show-sql: true
+    open-in-view: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # validate | update | create | create-drop
+    properties:
+      hibernate:
+        format_sql: true

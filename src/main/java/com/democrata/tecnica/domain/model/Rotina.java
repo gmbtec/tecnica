@@ -10,9 +10,11 @@ public class Rotina {
     @Column(nullable = false)
     private String executarRotina;
 
-    // Novo campo status com valor padrão "A"
 
     private String status;
+
+    @Column
+    private String link;
 
     @ManyToOne
     @JoinColumn(name = "acao_id")
@@ -36,6 +38,14 @@ public class Rotina {
 
     public String getStatus() {
         return status;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public void setStatus(String status) {

@@ -12,7 +12,11 @@ public class Acao {
 
     private String executar;
 
-    @OneToMany(mappedBy = "acao")
+    // Adicionar o novo campo link
+    @Column
+    private String link;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "acao", cascade = CascadeType.ALL)
     private List<Rotina> rotinas;
 
     public Long getId() {
@@ -30,6 +34,14 @@ public class Acao {
 
     public void setExecutar(String executar) {
         this.executar = executar;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public List<Rotina> getRotinas() {
